@@ -5,6 +5,7 @@
 # Se debería ejecutar el script con sudo para evitar problemas de permisos
 # Variables de entorno esperadas:
 # PROXIED_SERVER_IP = IP del servidor a proteger, se utiliza para configurar el nginx
+PROXIED_SERVER_IP = 192.168.1.20
 
 # Instalar dependencias
 # Instalar PCRE: 
@@ -38,6 +39,6 @@ sudo make install ./nginx-1.9.0/
 echo “#!/bin/sh\n/usr/local/sbin/nginx” > /etc/rc.local
 
 # Configurar nginx para hacer de reverse proxy
-echo “location / { \n           ModSecurityEnabled on;\n           ModSecurityConfig modsecurity.conf;\n           # ip del server a proteger\n           proxy_pass $PROXIED_SERVER_IP;\n           proxy_read_timeout 180s;\n       }” >> /etc/nginx/nginx.conf
+echo “location / { \n           # ip del server a proteger\n           proxy_pass $PROXIED_SERVER_IP;\n           proxy_read_timeout 180s;\n       }” >> /etc/nginx/nginx.conf
 
 
