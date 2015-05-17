@@ -9,7 +9,7 @@ PROXIED_SERVER_IP = 192.168.1.20
 
 # Instalar dependencias
 # Instalar PCRE: 
-pkg_add ftp://ftp.openbsd.org/pub/OpenBSD/5.6/packages/amd64/pcre-8.35.tgz
+pkg_add ftp://ftp.openbsd.org/pub/OpenBSD/5.7/packages/amd64/pcre-8.35.tgz
 # Instalar libxml2 :
 # pkg_add ftp://ftp.openbsd.org/pub/OpenBSD/5.6/packages/amd64/libxml-2.9.1p1.tgz
 
